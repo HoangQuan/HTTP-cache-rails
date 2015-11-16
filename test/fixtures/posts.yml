@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  link: MyText
+  title: MyString
+  category_id: 1
+  permalink: MyString
+
+two:
+  link: MyText
+  title: MyString
+  category_id: 1
+  permalink: MyString
