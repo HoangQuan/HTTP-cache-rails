@@ -8,7 +8,7 @@ class Crawler < ActiveRecord::Base
       begin
         page = Nokogiri::HTML(open(url))
       rescue Timeout::Error
-      	""
+      	"Error"
       end
     end
     def crawl_barch
