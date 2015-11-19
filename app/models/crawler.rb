@@ -1,5 +1,6 @@
 class Crawler < ActiveRecord::Base
   require 'nokogiri'
+  require 'open-uri'
   VNEXPRESS_URLS = ["http://vnexpress.net/rss/tin-moi-nhat.rss", "http://vnexpress.net/rss/thoi-su.rss"]
 
   class << self
