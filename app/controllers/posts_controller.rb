@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :crawler_posts, only: [:index]
 
   # GET /posts
   # GET /posts.json
@@ -70,5 +71,11 @@ class PostsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
       params.require(:post).permit(:link, :title, :category_id, :permalink)
+    end
+
+    def crawler_posts
+      if Post.present? || Post.last.created_at + 3.hours < Time.now
+        Crawler.crawl_barch
+      end
     end
 end
