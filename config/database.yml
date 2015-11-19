@@ -51,9 +51,9 @@ production:
   adapter: postgresql
   encoding: unicode
   reconnect: false
-  database: dbvh4tq5sd35c7
+  database: ddtfhrspr6a1v5
   pool: 5
-  username: hhkbnywabiiatg
+  username: gsnrpeldppnqiv
   port: 5432
-  host: ec2-54-204-42-135.compute-1.amazonaws.com
-  password: "xVJ8NFBRSz9e6YbP81QCwbWsrB"
+  host: ec2-54-83-199-54.compute-1.amazonaws.com
+  password: "uKz_BwlHu9K1h582C1iV76TGu3"
