@@ -48,7 +48,12 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: share_links_production
-  username: root
-  password: <%= ENV['MOVIESTORE_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  reconnect: false
+  database: dbvh4tq5sd35c7
+  pool: 5
+  username: hhkbnywabiiatg
+  port: 5432
+  host: ec2-54-204-42-135.compute-1.amazonaws.com
+  password: "xVJ8NFBRSz9e6YbP81QCwbWsrB"
