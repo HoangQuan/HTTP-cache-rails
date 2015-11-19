@@ -1,7 +1,7 @@
-<div class="row">
+<div class="row center1">
 <div class="large-6 columns">
   <div class="signup-panel">
-    <p class="welcome"> Welcome to this awesome app!</p>
+    <p class="welcome"> Welcome to chiaselink.com!</p>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
       <div class="row collapse">
@@ -28,9 +28,9 @@
           <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirm password", class: "radius" %>
         </div>
       </div>
-      <%= f.submit "Let's Go", class: "button" %></div>
+      <%= f.submit "Đăng ký", class: "button" %></div>
     <% end %>
-     <p>Already have an account? <a href="#">Login here &raquo</a></p>
+     <p>Bạn đã có tài khoản? hãy <%= link_to "Đăng nhập" , new_user_session_path %>
      <%= render "devise/shared/links" %>
   </div>
 </div>

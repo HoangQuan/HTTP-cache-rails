@@ -3,71 +3,59 @@
   <div class="row">
     <div class="large-12 columns">
       <div class="panel">
-        <h1>Feed Template</h1>
+        <!-- <h1>Feed Template</h1> -->
       </div>
     </div>
   </div>
    
   <div class="row">
-   
-    <div class="large-3 columns ">
-      <div class="panel">
-        <a href="#"><img src="http://placehold.it/300x240&amp;text=[img]"></a>
-        <h5><a href="#">Your Name</a></h5>
-        <div class="section-container vertical-nav" data-section="" data-options="deep_linking: false; one_up: true" data-section-resized="true" style="min-height: 47px;">
-        <section class="section">
-          <h5 class="title" style="left: 0px; height: 47px;"><a href="#">Section 1</a></h5>
-        </section>
-        <section class="section">
-          <h5 class="title" style="left: 101px; height: 47px;"><a href="#">Section 2</a></h5>
-        </section>
-        <section class="section">
-          <h5 class="title" style="left: 202px; height: 47px;"><a href="#">Section 3</a></h5>
-        </section>
-        <section class="section">
-          <h5 class="title" style="left: 303px; height: 47px;"><a href="#">Section 4</a></h5>
-        </section>
-        <section class="section">
-          <h5 class="title" style="left: 404px; height: 47px;"><a href="#">Section 5</a></h5>
-        </section>
-        <section class="section">
-          <h5 class="title" style="left: 505px; height: 47px;"><a href="#">Section 6</a></h5>
-        </section>
-      </div>
+  <div class="large-4 small-12 columns">
+    <a href="http://gaixinh.fun4v.com/posts/phai-lam-sao-bay-gio/455">
+    <img src="http://gaixinh.fun4v.com/img/2015-11-13/adhwos-11219314-1698852413682603-7728400685192812600-n.jpeg"></a>
+    <div class="hide-for-small panel">
+      <h3>Ngắm gái mỗi ngày</h3>
+      <!-- <h5 class="subheader">Risus ligula, aliquam nec fermentum vitae, sollicitudin eget urna. Donec dignissim -->
+      <!-- nibh fermentum odio ornare sagittis.</h5> -->
     </div>
+    <a href="#">
+      <div class="panel callout radius">
+        <!-- <h5> nbsp; items in your cart</h6> -->
+      </div>
+    </a>
   </div>
-   
-   
-  <div class="large-6 columns">
-   
+
+  <div class="large-8 columns">
     <div class="row">
-      <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&amp;text=[img]"></div>
-        <div class="large-10 columns">
-          <p><strong>Some Person said:</strong> Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong.</p>
-          <ul class="inline-list">
-            <li><a href="">Reply</a></li>
-            <li><a href="">Share</a></li>
-          </ul>
-          <h6>2 Comments</h6>
-          <div class="row">
-            <div class="large-2 columns small-3"><img src="http://placehold.it/50x50&amp;text=[img]"></div>
-            <div class="large-10 columns"><p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit</p></div>
+      <% @posts.each do |post|%>
+      <div class="large-4 small-6 columns ">
+        <a href="<%= post.link %>"><img src="<%= post.image %>" title="<%== post.title %>" style="width: 100%"></a>
+        <div class="panel">
+          <div class="post-title">
+            <a href="<%= post.link %>"><p><strong class="ellipsis1"><%= post.title %> </strong><br></a>
           </div>
-          <div class="row">
-            <div class="large-2 columns small-3"><img src="http://placehold.it/50x50&amp;text=[img]"></div>
-            <div class="large-10 columns"><p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit</p></div>
+          <p class="post-descrition"><%= post.description.delete("]]>") %></p>
+          <h6 class="subheader"><p><a href="">Nguon:  <b><%= post.get_domain.upcase %></b></a></p></h6>
+        </div>
+      </div>
+      <%end%>
+    </div>
+  </div> 
+
+  <div class="row">
+    <div class="large-12 columns">
+      <div class="panel">
+        <div class="row">
+          <div class="large-2 small-6 columns"><img src="https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xpf1/t31.0-8/860425_695227343875090_8043973826892118225_o.jpg"></div>
+            <div class="large-10 small-6 columns">
+              <strong>This Site Is Managed By HoangQuan</strong>
+              <hr>
+              Tổng hợp tin tức nhanh trong ngày cho bạn - quandhcn@gmail.com
+            </div>
           </div>
         </div>
+      </div> 
     </div>
-     
-  <hr>
-   
   </div>
-   
-   
-  <aside class="large-3 columns hide-for-small">
-    <p><img src="http://placehold.it/300x440&amp;text=[ad]"></p>
-    <p><img src="http://placehold.it/300x440&amp;text=[ad]"></p>
-  </aside>
+
   </div>
 </body>
