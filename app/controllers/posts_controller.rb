@@ -75,7 +75,7 @@ class PostsController < ApplicationController
 
     def crawler_posts
       if Post.blank? || Post.last.created_at + 4.hours < Time.now
-        Crawler.crawl_barch
+        Crawler.delay.crawl_barch
       end
     end
 end

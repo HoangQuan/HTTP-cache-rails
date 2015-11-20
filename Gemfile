@@ -25,6 +25,7 @@ gem 'devise'
 gem 'pry'
 gem 'public_suffix'
 gem 'nokogiri'
+gem 'delayed_job_active_record'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
