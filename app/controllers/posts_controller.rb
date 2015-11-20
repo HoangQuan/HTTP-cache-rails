@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.order_by_created_at.page params[:page]
   end
 
   # GET /posts/1
@@ -70,7 +70,7 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:link, :title, :category_id, :permalink)
+      params.require(:post).permit(:link, :title, :category_id, :permalink, :description, :image)
     end
 
     def crawler_posts
