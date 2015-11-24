@@ -6,11 +6,16 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.order_by_created_at.page params[:page]
+    # expires_in 2.minutes
+    fresh_when last_modified: @posts.maximum(:updated_at), etag: @posts
+    # fresh_when etag: @posts
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
+    # expires_in 2.minutes
+    fresh_when etag: @post, last_modified: @post.updated_at
   end
 
   # GET /posts/new
