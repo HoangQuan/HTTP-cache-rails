@@ -21,7 +21,7 @@
       <h6>Written by <a href="#">John Smith</a> on August 12, 2012.</h6>
       <div class="row">
         <div class="large-9 columns">
-          <%= Crawler.crawl("http://soha.vn/xa-hoi/bi-mat-mo-vang-huyen-giang-va-su-tan-doc-cua-nhom-cuop-can-20151115145959052.htm").at("div.page-body").to_s.html_safe%>
+          <%= Crawler.crawl(@post.link).to_s.html_safe%>
         </div>
       </div>
     </article>

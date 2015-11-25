@@ -35,5 +35,18 @@ class Crawler < ActiveRecord::Base
       res = Net::HTTP.get_response URI(url)
       res.body.present?
     end
+
+  def chupanh url
+    f = Screencap::Fetcher.new(url.to_s)
+    screenshot = f.fetch(
+      :output => 'public/images/1111.png' # don't forget the extension!
+      # optional:
+      # :div => '#page', # selector for a specific element to take screenshot of
+      # :width => 1024,
+      # :height => 768,
+      # :top => 0, :left => 0, :width => 100, :height => 100 # dimensions for a specific area
+    )
+  end
+
   end
 end
