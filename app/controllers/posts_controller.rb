@@ -1,12 +1,12 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :crawler_posts, only: [:index]
   before_action :check_action, only: :index
+  before_action :crawler_posts, only: [:index]
 
   # GET /posts
   # GET /posts.json
   def index
-    @q = Post.ransack(params[:q] = {tag_cont: params[:action_name]})
+    @q = Post.ransack(params[:q] = {tag_cont: params[:action_name] || "tin-moi-nhat"})
     @posts = @q.result.order_by_created_at.page params[:page]
     # expires_in 2.minutes
     fresh_when last_modified: @posts.maximum(:updated_at), etag: @posts
@@ -90,5 +90,8 @@ class PostsController < ApplicationController
       end
     end
     def check_action
+      if params[:action_name] && !Crawler::VALID_ACTION.include?(params[:action_name])
+        redirect_to root_path
+      end
     end
 end

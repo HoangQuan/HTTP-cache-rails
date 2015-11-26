@@ -1,6 +1,7 @@
 class Crawler < ActiveRecord::Base
   require 'nokogiri'
   require 'open-uri'
+  VALID_ACTION = ["thoi-su", "the-thao", "phap-luat"]
   VNEXPRESS_URLS = ["http://vnexpress.net/rss/tin-moi-nhat.rss"]
   SOHA_DANTRI_URLS = ["http://soha.vn/giai-tri.rss", "http://dantri.com.vn/trangchu.rss"]
   THOISU_URL = ["http://vnexpress.net/rss/thoi-su.rss", "http://soha.vn/xa-hoi.rss", "http://dantri.com.vn/xa-hoi.rss"]
@@ -16,11 +17,11 @@ class Crawler < ActiveRecord::Base
     def crawl_barch
       begin
         VNEXPRESS_URLS.each do |url|
-          crawl_noko url, ""
+          crawl_noko url, "tin-moi-nhat"
         end
 
         SOHA_DANTRI_URLS.each do |url|
-          crawl_crack url, ""
+          crawl_crack url, "tin-moi-nhat"
         end
       rescue Timeout::Error
         ""
