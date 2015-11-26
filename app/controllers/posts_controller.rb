@@ -1,11 +1,13 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :crawler_posts, only: [:index]
+  before_action :check_action, only: :index
 
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.order_by_created_at.page params[:page]
+    @q = Post.ransack(params[:q] = {tag_cont: params[:action_name]})
+    @posts = @q.result.order_by_created_at.page params[:page]
     # expires_in 2.minutes
     fresh_when last_modified: @posts.maximum(:updated_at), etag: @posts
     # fresh_when etag: @posts
@@ -80,7 +82,13 @@ class PostsController < ApplicationController
 
     def crawler_posts
       if Post.blank? || Post.last.created_at + 4.hours < Time.now
-        Crawler.delay.crawl_barch
+        if params[:action_name]
+          Crawler.delay.crawl_by_action(params[:action_name])
+        else
+          Crawler.delay.crawl_barch
+        end
       end
+    end
+    def check_action
     end
 end

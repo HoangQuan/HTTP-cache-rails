@@ -1,1 +1,1 @@
-worker:  bundle exec rake jobs:work
+run "bin/delayed_job restart"

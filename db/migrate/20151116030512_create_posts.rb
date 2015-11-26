@@ -5,6 +5,7 @@ class CreatePosts < ActiveRecord::Migration
       t.text :title
       t.integer :category_id
       t.string :permalink
+      
 
       t.string :image
       t.text :description

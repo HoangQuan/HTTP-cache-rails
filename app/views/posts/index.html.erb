@@ -33,8 +33,8 @@
           <div class="post-title">
             <a href="<%= post.link %>"><p><strong class="ellipsis1"><%= post.title %> </strong><br></a>
           </div>
-          <p class="post-descrition"><%= post.description.delete("]]>") if post.description %></p>
-          <h6 class="subheader"><p><a href="">Nguon:  <b><%= post.get_domain.upcase %></b></a></p></h6>
+          <p class="post-descrition"><%= post.description.delete("]]>") if post.description %><%= "..." if post.title == post.description %></p>
+          <h6 class="subheader"><p><a href="<%= post.link %>"><b><%= post.get_domain.upcase %></b></a></p></h6>
         </div>
       </div>
       <%end%>

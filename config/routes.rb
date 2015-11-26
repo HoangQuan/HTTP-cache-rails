@@ -2,6 +2,12 @@ Rails.application.routes.draw do
   resources :posts
   devise_for :users
   root 'posts#index'
+  action_page_constraints = {
+      period: /(thoi_su|weekly)?/,
+    }
+  # scope_with_constraints(action_page_constraints) do
+      get "/:action_name"  => "posts#index",  as: "action_path"
+  # end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

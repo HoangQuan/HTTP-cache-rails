@@ -29,6 +29,8 @@ gem 'delayed_job_active_record'
 gem "kaminari"
 gem 'screencap'
 gem "daemons"
+gem 'crack'
+gem 'ransack'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
