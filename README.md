@@ -29,7 +29,7 @@ Phương pháp tiếp cận đầu tiên là `Lần thay đổi cuối cùng - L
 
 Khi có request, Server sẽ trả về cho Trình duyệt thông tin của file đồng thời trả về thêm thời gian mà file này được cập nhật. Ví dụ bạn truy cập vào http://localhost:3000/posts trang index. Server sẽ trả về dánh sách Post cùng với `Last-Modified`
 
-![1.png](/uploads/images/f817bb52ebf40f927e39324c5ca708c0aafde390/6c4dedd0754f10c4b97e8db3b7c807c3cfb6783a.png =441) 
+![1.png](https://viblo.asia/uploads/images/f817bb52ebf40f927e39324c5ca708c0aafde390/6c4dedd0754f10c4b97e8db3b7c807c3cfb6783a.png =441) 
 
 Trình duyệt sẽ lưu thông tin này vào trong `Header`. Từ các lần truy cập sau trình duyệt sẽ gửi request kèm theo Header chứa thông tin này thông qua biến `If-Modified-Since`
 
