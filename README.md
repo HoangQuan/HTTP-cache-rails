@@ -50,7 +50,7 @@ end
 ``` 
 Với `lần đầu` gửi request, server sẽ trả lại kết quả là danh sách posts và thời điểm Last-Modified (Trong ví dụ này mình lấy thời điểm cuối cùng update của bài post bất kỳ làm mốc)
 
-![2.png](/uploads/images/f817bb52ebf40f927e39324c5ca708c0aafde390/e2cec23afb1deff17776ff8ceb4e77c73df4aa66.png =401) 
+![2.png](https://viblo.asia/uploads/images/f817bb52ebf40f927e39324c5ca708c0aafde390/e2cec23afb1deff17776ff8ceb4e77c73df4aa66.png =401) 
 
 
 Bạn có thể thấy ở hình trên `status` trả về là `200` và kèm theo giá trị của `Last-Modified`.
@@ -77,7 +77,7 @@ Dùng `Etag trong ROR `
 
 Kể từ rails 4 chúng ta đã có thể cache các file `js, css` với `turbolinks`. Gem này cũng ứng dụng Etag để cache.
 
-![4.png](/uploads/images/f817bb52ebf40f927e39324c5ca708c0aafde390/98137bbda447a1e02a11ab287d731b24287d8c64.png =912) 
+![4.png](https://viblo.asia/uploads/images/f817bb52ebf40f927e39324c5ca708c0aafde390/98137bbda447a1e02a11ab287d731b24287d8c64.png =912) 
 
 Cùng xem giá trị  `Etag:"d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037"`
 
@@ -107,7 +107,7 @@ Khi thực hiện request trình duyệt sẽ gửi yêu cầu kèm theo tham s�
 
 Response trả về status 200 cùng với mã Etag nếu là lần truy cập đầu tiêm. Với các lần truy cập tiếp theo sẽ trả về status code `304 Not Modified` 
 
-![5.png](/uploads/images/f817bb52ebf40f927e39324c5ca708c0aafde390/84228b019055dd0e26f33b105322029d8e055da8.png =375) 
+![5.png](https://viblo.asia/uploads/images/f817bb52ebf40f927e39324c5ca708c0aafde390/84228b019055dd0e26f33b105322029d8e055da8.png =375) 
 
 #####2.3 Expires
 
@@ -147,7 +147,7 @@ end
 ```
 Sau 2 phút cache sẽ hết hạn và Trình duyệt sẽ request thẳng đến server.
 
-![6.png](/uploads/images/f817bb52ebf40f927e39324c5ca708c0aafde390/cf0af6e72ea04855d6ee134c03148dfbda750cfd.png =259) 
+![6.png](https://viblo.asia/uploads/images/f817bb52ebf40f927e39324c5ca708c0aafde390/cf0af6e72ea04855d6ee134c03148dfbda750cfd.png =259) 
 
 #####**Chú ý:**
 
